@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
-import SubHeader from 'component/subHeader';
-import { BusyMessage } from 'component/common.js';
-import { FeaturedCategory } from 'page/discover/view';
+import Page from 'component/page';
+import BusyIndicator from 'component/common/busy-indicator';
+import CategoryList from 'component/common/category-list';
 import type { Subscription } from 'redux/reducers/subscriptions';
+import Button from 'component/button';
 
 type SavedSubscriptions = Array<Subscription>;
 
@@ -61,14 +62,13 @@ export default class extends React.PureComponent<Props> {
       (subscriptions.length !== savedSubscriptions.length || someClaimsNotLoaded);
 
     return (
-      <main className="main main--no-margin">
-        <SubHeader fullWidth smallMargin />
+      <Page noPadding isLoading={fetchingSubscriptions}>
         {!savedSubscriptions.length && (
-          <span>{__("You haven't subscribed to any channels yet")}</span>
-        )}
-        {fetchingSubscriptions && (
-          <div className="card-row__placeholder">
-            <BusyMessage message={__('Fetching subscriptions')} />
+          <div className="page__empty">
+            {__("It looks like you aren't subscribed to any channels yet.")}
+            <div className="card__actions card__actions--center">
+              <Button button="primary" navigate="/discover" label={__('Explore new content')} />
+            </div>
           </div>
         )}
         {!!savedSubscriptions.length && (
@@ -83,7 +83,7 @@ export default class extends React.PureComponent<Props> {
                 }
 
                 return (
-                  <FeaturedCategory
+                  <CategoryList
                     key={subscription.channelName}
                     categoryLink={subscription.uri}
                     category={subscription.channelName}
@@ -93,7 +93,7 @@ export default class extends React.PureComponent<Props> {
               })}
           </div>
         )}
-      </main>
+      </Page>
     );
   }
 }
