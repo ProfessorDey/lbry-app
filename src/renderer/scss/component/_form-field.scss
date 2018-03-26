@@ -53,11 +53,11 @@
 }
 
 .form-field__label {
-  color: var(--color-black);
+  color: inherit;
 }
 
 .form-field__help {
-  color: var(--color-grey-dark);
+  color: var(--color-help);
   padding-top: $spacing-vertical * 1/3;
 }
 

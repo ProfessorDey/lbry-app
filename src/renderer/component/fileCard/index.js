@@ -22,7 +22,7 @@ const select = (state, props) => {
     fileInfo: makeSelectFileInfoForUri(props.uri)(state),
     metadata: makeSelectMetadataForUri(props.uri)(state),
     isResolvingUri: makeSelectIsUriResolving(props.uri)(state),
-  }
+  };
 
   return {
     obscureNsfw: !selectShowNsfw(state),

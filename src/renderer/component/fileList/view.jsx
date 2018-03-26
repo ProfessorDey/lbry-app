@@ -128,11 +128,7 @@ class FileList extends React.PureComponent<Props, State> {
     const content = [];
 
     this.sortFunctions[sortBy](fileInfos).forEach(fileInfo => {
-      const {
-        channel_name: channelName,
-        claim_name: claimName,
-        claim_id: claimId,
-      } = fileInfo;
+      const { channel_name: channelName, claim_name: claimName, claim_id: claimId } = fileInfo;
       const uriParams = {};
 
       if (channelName) {
@@ -146,13 +142,7 @@ class FileList extends React.PureComponent<Props, State> {
 
       const uri = buildURI(uriParams);
 
-      content.push(
-        <FileCard
-          key={claimName}
-          uri={uri}
-          showPrice={false}
-        />
-      );
+      content.push(<FileCard key={claimName} uri={uri} showPrice={false} />);
     });
 
     return (

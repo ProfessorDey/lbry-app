@@ -106,7 +106,7 @@ export const selectTotalDownloadProgress = createSelector(selectDownloadingFileI
 });
 
 export const selectSearchDownloadUris = query =>
-  createSelector(selectFileInfosDownloaded, (fileInfos) => {
+  createSelector(selectFileInfosDownloaded, fileInfos => {
     if (!query || !fileInfos.length) {
       return null;
     }
@@ -177,10 +177,10 @@ export const selectSearchDownloadUris = query =>
             claim_id: claimId,
             claim_name: claimName,
             value,
-            metadata
+            metadata,
           } = fileInfo;
           const uriParams = {};
-          
+
           if (channelName) {
             uriParams.channelName = channelName;
             uriParams.contentName = claimName;

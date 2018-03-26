@@ -36,9 +36,7 @@ class RewardsPage extends React.PureComponent {
       if (!user.primary_email || !user.has_verified_email || !user.is_identity_verified) {
         return (
           <section className="card card--section">
-            <div className="card__title">
-              {__('Humans Only')}
-            </div>
+            <div className="card__title">{__('Humans Only')}</div>
             <div className="card__subtitle">
               <p>
                 {__('Rewards are for human beings only.')}{' '}
@@ -115,10 +113,12 @@ class RewardsPage extends React.PureComponent {
       );
     }
 
-    const isNotEligible = !user.primary_email || !user.has_verified_email || !user.is_identity_verified
+    const isNotEligible =
+      !user.primary_email || !user.has_verified_email || !user.is_identity_verified;
     return (
-      <div className={classnames("card__list--rewards", {
-          "card--disabled": isNotEligible
+      <div
+        className={classnames('card__list--rewards', {
+          'card--disabled': isNotEligible,
         })}
       >
         {rewards.map(reward => <RewardTile key={reward.reward_type} reward={reward} />)}

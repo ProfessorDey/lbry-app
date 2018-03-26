@@ -224,9 +224,9 @@ class PublishForm extends React.PureComponent<Props> {
   }
 
   getSubmitLabel() {
-    const { editing, publishing }  = this.props;
+    const { editing, publishing } = this.props;
     if (editing) {
-      return !publishing ?  __('Edit') : __('Editing...');
+      return !publishing ? __('Edit') : __('Editing...');
     }
 
     return !publishing ? __('Publish') : __('Publishing...');
@@ -496,15 +496,15 @@ class PublishForm extends React.PureComponent<Props> {
               otherLicenseDescription={otherLicenseDescription}
               licenseUrl={licenseUrl}
               copyrightNotice={copyrightNotice}
-              handleLicenseChange={( newLicenseType, newLicenseUrl) =>
+              handleLicenseChange={(newLicenseType, newLicenseUrl) =>
                 updatePublishForm({
                   licenseType: newLicenseType,
-                  licenseUrl: newLicenseUrl
+                  licenseUrl: newLicenseUrl,
                 })
               }
               handleLicenseDescriptionChange={event =>
                 updatePublishForm({
-                  otherLicenseDescription: event.target.value
+                  otherLicenseDescription: event.target.value,
                 })
               }
               handleLicenseUrlChange={event =>

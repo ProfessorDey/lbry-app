@@ -26,11 +26,11 @@ class WunderBar extends React.PureComponent<Props> {
   getSuggestionIcon = (type: string) => {
     switch (type) {
       case 'file':
-      return icons.COMPASS;
+        return icons.COMPASS;
       case 'channel':
-      return icons.AT_SIGN;
+        return icons.AT_SIGN;
       default:
-      return icons.SEARCH;
+        return icons.SEARCH;
     }
   };
 

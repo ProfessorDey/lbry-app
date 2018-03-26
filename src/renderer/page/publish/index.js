@@ -7,11 +7,7 @@ import { selectResolvingUris } from 'redux/selectors/content';
 import { selectPublishFormValues } from 'redux/selectors/publish';
 import { doResolveUri } from 'redux/actions/content';
 import { selectBalance } from 'redux/selectors/wallet';
-import {
-  doClearPublish,
-  doUpdatePublishForm,
-  doPublish,
-} from 'redux/actions/publish';
+import { doClearPublish, doUpdatePublishForm, doPublish } from 'redux/actions/publish';
 import { makeSelectCostInfoForUri } from 'redux/selectors/cost_info';
 import { doPrepareEdit } from 'redux/actions/publish';
 import PublishPage from './view';

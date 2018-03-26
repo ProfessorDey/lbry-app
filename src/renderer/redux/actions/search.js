@@ -82,7 +82,7 @@ export const doUpdateSearchQuery = (query: string, shouldSkipSuggestions: ?boole
   }
 };
 
-export const getSearchSuggestions = (value: string) => (dispatch) => {
+export const getSearchSuggestions = (value: string) => dispatch => {
   const query = value.trim();
 
   const isPrefix = () => {

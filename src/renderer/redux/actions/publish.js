@@ -12,7 +12,7 @@ import type {
 } from 'redux/reducers/publish';
 import { CHANNEL_NEW, CHANNEL_ANONYMOUS } from 'constants/claim';
 
-type Action = UpdatePublishFormAction | { type: ACTIONS.CLEAR_PUBLISH }
+type Action = UpdatePublishFormAction | { type: ACTIONS.CLEAR_PUBLISH };
 type PromiseAction = Promise<Action>;
 type Dispatch = (action: Action | PromiseAction | Array<Action>) => any;
 type ThunkAction = (dispatch: Dispatch) => any;
@@ -21,11 +21,12 @@ type GetState = () => {};
 export const doClearPublish = () => (dispatch: Dispatch): Action =>
   dispatch({ type: ACTIONS.CLEAR_PUBLISH });
 
-export const doUpdatePublishForm = (publishFormValue: UpdatePublishFormData) =>
-  (dispatch: Dispatch): UpdatePublishFormAction =>
+export const doUpdatePublishForm = (publishFormValue: UpdatePublishFormData) => (
+  dispatch: Dispatch
+): UpdatePublishFormAction =>
   dispatch({
     type: ACTIONS.UPDATE_PUBLISH_FORM,
-    data: { ...publishFormValue }
+    data: { ...publishFormValue },
   });
 
 export const doPrepareEdit = (claim: any) => (dispatch: Dispatch) => {
@@ -89,7 +90,7 @@ export const doPublish = (params: PublishParams): ThunkAction => {
     license,
     licenseUrl,
     language,
-    thumbnail
+    thumbnail,
   };
 
   if (fee) {
@@ -114,7 +115,7 @@ export const doPublish = (params: PublishParams): ThunkAction => {
     const success = () => {
       dispatch({
         type: ACTIONS.PUBLISH_SUCCESS,
-        data: { pendingPublish: publishPayload }
+        data: { pendingPublish: publishPayload },
       });
       dispatch(doOpenModal(MODALS.PUBLISH, { uri }));
     };

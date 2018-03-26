@@ -10,7 +10,8 @@
 }
 
 .card--section {
-  background-color: var(--color-white);
+  background: var(--card-bg);
+  box-shadow: var(--box-shadow-layer);
   padding: $spacing-vertical;
   margin-top: $spacing-vertical * 2/3;
 }
@@ -172,9 +173,7 @@
 }
 
 .card__subtext-title {
-  color: var(--color-black);
   font-size: calc(var(--font-size-subtext-multiple) * 1.5em);
-
   &:not(:first-of-type) {
     margin-top: $spacing-vertical * 3/2;
   }

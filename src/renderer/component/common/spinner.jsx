@@ -8,8 +8,8 @@ type Props = {
 
 class Spinner extends React.Component<Props> {
   static defaultProps = {
-    dark: false
-  }
+    dark: false,
+  };
 
   render() {
     const { dark } = this.props;

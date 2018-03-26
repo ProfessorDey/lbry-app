@@ -52,18 +52,11 @@ type Props = {
 
 class FilePage extends React.Component<Props> {
   componentDidMount() {
-    const {
-      uri,
-      fileInfo,
-      fetchFileInfo,
-      costInfo,
-      fetchCostInfo
-    } = this.props;
+    const { uri, fileInfo, fetchFileInfo, costInfo, fetchCostInfo } = this.props;
 
     if (fileInfo === undefined) {
       fetchFileInfo(uri);
     }
-
 
     if (costInfo === undefined) {
       fetchCostInfo(uri);

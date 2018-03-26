@@ -174,11 +174,7 @@ class HelpPage extends React.PureComponent {
                   <td>{__('Access Token')}</td>
                   <td>
                     {this.state.accessTokenHidden && (
-                      <Button
-                        button="link"
-                        label={__('View')}
-                        onClick={this.showAccessToken}
-                      />
+                      <Button button="link" label={__('View')} onClick={this.showAccessToken} />
                     )}
                     {!this.state.accessTokenHidden &&
                       accessToken && (

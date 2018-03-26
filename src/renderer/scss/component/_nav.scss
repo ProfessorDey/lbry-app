@@ -1,6 +1,6 @@
 .nav {
   grid-area: nav;
-  background-color: var(--color-nav-bg);
+  background-color: var(--nav-bg);
   padding: $spacing-width;
 
   hr {
@@ -28,8 +28,10 @@
 
 .nav__link {
   // padding-top: $spacing-vertical / 3;
-  color: var(--color-grey-dark);
+  color: inherit;
   white-space: nowrap;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 
   .btn__label {
     margin-left: $spacing-vertical * 1/3;
@@ -47,11 +49,10 @@
     }
   }
 
-  .btn:hover {
-    color: var(--color-black);
+  &:hover {
+    opacity: 1;
   }
 }
-
 
 .nav__link--sub {
   margin-left: 5px;
@@ -71,7 +72,7 @@
 }
 
 .nav__link--active {
-  color: var(--color-black);
+  opacity: 1;
 }
 
 .nav__sub-links {
