@@ -1,8 +1,6 @@
 // @flow
 import React from 'react';
-import { normalizeURI } from 'lbryURI';
 import classnames from 'classnames';
-import throttle from 'util/throttle';
 import Icon from 'component/common/icon';
 import Autocomplete from './internal/autocomplete';
 import { parseQueryParams } from 'util/query_params';
@@ -25,6 +23,17 @@ class WunderBar extends React.PureComponent<Props> {
     this.input = undefined;
   }
 
+  getSuggestionIcon = (type: string) => {
+    switch (type) {
+      case 'file':
+      return icons.COMPASS;
+      case 'channel':
+      return icons.AT_SIGN;
+      default:
+      return icons.SEARCH;
+    }
+  };
+
   handleChange(e: SyntheticInputEvent<*>) {
     const { updateSearchQuery } = this.props;
     const { value } = e.target;
@@ -37,7 +46,6 @@ class WunderBar extends React.PureComponent<Props> {
     const query = value.trim();
     const getParams = () => {
       const parts = query.split('?');
-      const value = parts.shift();
 
       let extraParams = {};
       if (parts.length > 0) {
@@ -72,17 +80,6 @@ class WunderBar extends React.PureComponent<Props> {
 
     return;
   }
-
-  getSuggestionIcon = (type: string) => {
-    switch (type) {
-      case 'file':
-        return icons.COMPASS;
-      case 'channel':
-        return icons.AT_SIGN;
-      default:
-        return icons.SEARCH;
-    }
-  };
 
   input: ?HTMLInputElement;
 

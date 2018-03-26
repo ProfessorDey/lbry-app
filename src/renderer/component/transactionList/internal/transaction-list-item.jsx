@@ -51,7 +51,6 @@ class TransactionListItem extends React.PureComponent<Props> {
       fee,
       txid,
       type,
-      nout,
     } = transaction;
 
     const dateFormat = {

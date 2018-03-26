@@ -28,6 +28,8 @@
   "rules": {
     "import/no-commonjs": "warn",
     "import/no-amd": "warn",
-    "func-names": ["warn", "as-needed"]
+    "func-names": ["warn", "as-needed"],
+    "arrow-body-style": "off"
+
   }
 }

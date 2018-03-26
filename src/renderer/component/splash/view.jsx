@@ -7,7 +7,6 @@ import ModalDownloading from 'modal/modalDownloading';
 import * as modals from 'constants/modal_types';
 
 type Props = {
-  message: string,
   checkDaemonVersion: () => Promise<any>,
   modal: string,
 };

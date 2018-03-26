@@ -47,7 +47,7 @@ class ChannelTile extends React.PureComponent<Props> {
     const onClick = () => navigate('/show', { uri });
 
     return (
-      <section className="file-tile card--link" onClick={onClick}>
+      <section className="file-tile card--link" onClick={onClick} role="button">
         <CardMedia title={channelName} thumbnail={null} />
         <div className="file-tile__info">
           {isResolvingUri && <div className="card__title--small">{__('Loading...')}</div>}

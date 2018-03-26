@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'component/common/icon';
 import Button from 'component/button';
 import classnames from 'classnames';
 import * as icons from 'constants/icons';

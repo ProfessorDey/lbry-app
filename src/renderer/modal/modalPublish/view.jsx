@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { Modal } from 'modal/modal';
-import SendTip from 'component/walletSendTip';
 
 type Props = {
   closeModal: () => void,

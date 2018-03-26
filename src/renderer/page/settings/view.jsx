@@ -260,9 +260,6 @@ class SettingsPage extends React.PureComponent<Props, State> {
 
             <section className="card card--section">
               <div className="card__title">{__('Share Diagnostic Data')}</div>
-              <div className="card__subtitle">
-                {__('List what we are doing with the data here')}
-              </div>
               <div className="card__content">
                 <FormField
                   type="checkbox"
@@ -279,36 +276,38 @@ class SettingsPage extends React.PureComponent<Props, State> {
               </div>
             </section>
 
-            <section className="card card--section">
-              <div className="card__title">{__('Theme')}</div>
-
-              <FormField
-                name="theme_select"
-                type="select"
-                onChange={this.onThemeChange}
-                value={currentTheme}
-                disabled={automaticDarkModeEnabled}
-              >
-                {themes.map(theme => (
-                  <option key={theme} value={theme}>
-                    {theme}
-                  </option>
-                ))}
-              </FormField>
-
-              <FormField
-                type="checkbox"
-                name="automatic_dark_mode"
-                onChange={e => this.onAutomaticDarkModeChange(e.target.checked)}
-                checked={automaticDarkModeEnabled}
-                postfix={__('Automatic dark mode (9pm to 8am)')}
-              />
-            </section>
+            {
+              // Hiding this for now until we update the dark mode styles
+              // <section className="card card--section">
+              //   <div className="card__title">{__('Theme')}</div>
+              //     <FormField
+              //       name="theme_select"
+              //       type="select"
+              //       onChange={this.onThemeChange}
+              //       value={currentTheme}
+              //       disabled={automaticDarkModeEnabled}
+              //       >
+              //       {themes.map(theme => (
+              //         <option key={theme} value={theme}>
+              //           {theme}
+              //         </option>
+              //       ))}
+              //     </FormField>
+              //
+              //     <FormField
+              //       type="checkbox"
+              //       name="automatic_dark_mode"
+              //       onChange={e => this.onAutomaticDarkModeChange(e.target.checked)}
+              //       checked={automaticDarkModeEnabled}
+              //       postfix={__('Automatic dark mode (9pm to 8am)')}
+              //     />
+              // </section>
+            }
 
             <section className="card card--section">
               <div className="card__title">{__('Application Cache')}</div>
               <span className="card__subtitle">
-                {__('This will delete your subscriptions, ... other stuff')}
+                {__('This will delete your subscriptions, and clar the app\'s cache')}
               </span>
               <div className="card__content">
                 <Button

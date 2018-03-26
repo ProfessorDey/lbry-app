@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { buildURI, parseURI } from 'lbryURI';
+import { buildURI } from 'lbryURI';
 import BusyIndicator from 'component/common/busy-indicator';
 import FileTile from 'component/fileTile';
 import ReactPaginate from 'react-paginate';

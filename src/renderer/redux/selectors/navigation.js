@@ -84,10 +84,10 @@ export const selectNavLinks = createSelector(
     const getActiveSublink = category => {
       if (category === 'wallet') {
         const previousPath = getPreviousSubLinkPath(isWalletPage);
-        return previousPath ? previousPath : '/wallet';
+        return previousPath || '/wallet';
       } else if (category === 'myLbry') {
         const previousPath = getPreviousSubLinkPath(isMyLbryPage);
-        return previousPath ? previousPath : '/downloaded';
+        return previousPath || '/downloaded';
       }
 
       return undefined;

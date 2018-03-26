@@ -2,7 +2,6 @@
 import Lbry from 'lbry';
 import * as ACTIONS from 'constants/action_types';
 import * as MODALS from 'constants/modal_types';
-import { doFetchClaimListMine } from 'redux/actions/content';
 import { selectMyClaimsWithoutChannels } from 'redux/selectors/claims';
 import { selectPendingPublishes } from 'redux/selectors/publish';
 import { doOpenModal } from 'redux/actions/app';
@@ -90,6 +89,7 @@ export const doPublish = (params: PublishParams): ThunkAction => {
     license,
     licenseUrl,
     language,
+    thumbnail
   };
 
   if (fee) {

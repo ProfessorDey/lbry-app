@@ -15,7 +15,6 @@ import * as icons from 'constants/icons';
 import Button from 'component/button';
 import SubscribeButton from 'component/subscribeButton';
 import Page from 'component/page';
-import classnames from 'classnames';
 import player from 'render-media';
 import * as modals from 'constants/modal_types';
 
@@ -114,7 +113,6 @@ class FilePage extends React.Component<Props> {
       claimIsMine,
       prepareEdit,
       navigate,
-      costInfo,
     } = this.props;
 
     // File info

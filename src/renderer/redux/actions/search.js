@@ -1,6 +1,6 @@
 import * as ACTIONS from 'constants/action_types';
 import * as SEARCH_TYPES from 'constants/search';
-import { normalizeURI, buildURI, parseURI, isURIValid } from 'lbryURI';
+import { normalizeURI, buildURI, parseURI } from 'lbryURI';
 import { doResolveUri } from 'redux/actions/content';
 import { doNavigate } from 'redux/actions/navigation';
 import { selectCurrentPage } from 'redux/selectors/navigation';
@@ -82,8 +82,7 @@ export const doUpdateSearchQuery = (query: string, shouldSkipSuggestions: ?boole
   }
 };
 
-export const getSearchSuggestions = (value: string) => (dispatch, getState) => {
-  const { search: searchState } = getState();
+export const getSearchSuggestions = (value: string) => (dispatch) => {
   const query = value.trim();
 
   const isPrefix = () => {

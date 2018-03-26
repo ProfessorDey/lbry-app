@@ -2,7 +2,6 @@
 import * as React from 'react';
 import Button from 'component/button';
 import classnames from 'classnames';
-import Icon from 'component/common/icon';
 import { CSSTransitionGroup } from 'react-transition-group';
 import * as icons from 'constants/icons';
 
@@ -28,7 +27,7 @@ type Props = {
 };
 
 const SideBar = (props: Props) => {
-  const { navigate, back, forward, isBackDisabled, isForwardDisabled, isHome, navLinks } = props;
+  const { navigate, back, forward, isBackDisabled, isForwardDisabled, navLinks } = props;
   return (
     <nav className="nav">
       <div className="nav__actions-top">

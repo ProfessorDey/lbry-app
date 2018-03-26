@@ -8,13 +8,7 @@ import { selectPublishFormValues } from 'redux/selectors/publish';
 import { doResolveUri } from 'redux/actions/content';
 import { selectBalance } from 'redux/selectors/wallet';
 import {
-  doUpdateFilePath,
-  doClearFilePath,
-  doUpdateContentPricePref,
-  doUpdateContentPrice,
-  doUpdateContentDescriptors,
   doClearPublish,
-  doToggleTos,
   doUpdatePublishForm,
   doPublish,
 } from 'redux/actions/publish';
@@ -25,7 +19,6 @@ import PublishPage from './view';
 const select = (state, props) => {
   const publishState = selectPublishFormValues(state);
   const { uri, name } = publishState;
-  const { params: { id } } = props;
 
   const resolvingUris = selectResolvingUris(state);
   let isResolvingUri = false;

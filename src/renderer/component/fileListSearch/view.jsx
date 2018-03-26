@@ -2,8 +2,6 @@
 import React from 'react';
 import FileTile from 'component/fileTile';
 import ChannelTile from 'component/channelTile';
-import Button from 'component/button';
-import BusyIndicator from 'component/common/busy-indicator';
 import { parseURI } from 'lbryURI';
 import debounce from 'util/debounce';
 
@@ -46,8 +44,8 @@ class FileListSearch extends React.PureComponent<Props> {
   render() {
     const { uris, query, downloadUris, isSearching } = this.props;
 
-    let fileResults = [];
-    let channelResults = [];
+    const fileResults = [];
+    const channelResults = [];
     if (uris && uris.length) {
       uris.forEach(uri => {
         const isChannel = parseURI(uri).claimName[0] === '@';

@@ -1,7 +1,5 @@
 // @flow
 import * as React from 'react';
-import lbry from 'lbry';
-import Spinner from 'component/common/spinner';
 import Icon from 'component/common/icon';
 import * as icons from 'constants/icons';
 

@@ -5,12 +5,10 @@ import { isNameValid, buildURI, regexInvalidURI } from 'lbryURI';
 import { Form, FormField, FormRow, FormFieldPrice, Submit } from 'component/common/form';
 import Button from 'component/button';
 import Modal from 'modal/modal';
-import BusyIndicator from 'component/common/busy-indicator';
 import ChannelSection from 'component/selectChannel';
 import Icon from 'component/common/icon';
 import classnames from 'classnames';
-import path from 'path';
-import type { PublishParams, UpdatePublishFormData } from 'redux/actions/publish';
+import type { PublishParams, UpdatePublishFormData } from 'redux/reducers/publish';
 import FileSelector from 'component/common/file-selector';
 import BidHelpText from './internal/bid-help-text';
 import LicenseType from './internal/license-type';
@@ -24,9 +22,6 @@ type Props = {
   filePath: ?string,
   bid: ?number,
   editing: ?string,
-  prefillClaim: {
-    name?: string,
-  },
   title: ?string,
   thumbnail: ?string,
   description: ?string,
@@ -56,19 +51,13 @@ type Props = {
   bidError: ?string,
   publishing: boolean,
   balance: number,
-  clearError: () => void,
   clearPublish: () => void,
-  clearFilePath: () => void,
   resolveUri: string => void,
   scrollToTop: () => void,
   prepareEdit: ({}) => void,
 };
 
 class PublishForm extends React.PureComponent<Props> {
-  static defaultProps = {
-    prefillClaim: {},
-  };
-
   constructor(props: Props) {
     super(props);
 
@@ -156,7 +145,7 @@ class PublishForm extends React.PureComponent<Props> {
   }
 
   handleFileChange(filePath: string, fileName: string) {
-    const { updatePublishForm, clearFilePath, channel } = this.props;
+    const { updatePublishForm, channel } = this.props;
     const parsedFileName = fileName.replace(regexInvalidURI, '');
     const uri = this.getNewUri(parsedFileName, channel);
 
@@ -167,7 +156,7 @@ class PublishForm extends React.PureComponent<Props> {
   }
 
   handleNameChange(name: ?string) {
-    const { channel, updatePublishForm, resolveUri } = this.props;
+    const { channel, updatePublishForm } = this.props;
 
     if (!name) {
       updatePublishForm({ name, nameError: undefined });
@@ -191,7 +180,7 @@ class PublishForm extends React.PureComponent<Props> {
   }
 
   handleChannelChange(channelName: string) {
-    const { name, updatePublishForm, resolveUri } = this.props;
+    const { name, updatePublishForm } = this.props;
     if (name) {
       const uri = this.getNewUri(name, channelName);
       updatePublishForm({ channel: channelName, uri });
@@ -277,7 +266,6 @@ class PublishForm extends React.PureComponent<Props> {
     const {
       filePath,
       editing,
-      prefillClaim,
       title,
       thumbnail,
       description,

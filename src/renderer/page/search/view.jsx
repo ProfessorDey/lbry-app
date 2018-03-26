@@ -5,7 +5,6 @@ import FileTile from 'component/fileTile';
 import FileListSearch from 'component/fileListSearch';
 import ToolTip from 'component/common/tooltip';
 import Page from 'component/page';
-import debounce from 'util/debounce';
 
 const MODAL_ANIMATION_TIME = 250;
 

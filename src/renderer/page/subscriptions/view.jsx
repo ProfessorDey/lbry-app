@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import Page from 'component/page';
-import BusyIndicator from 'component/common/busy-indicator';
 import CategoryList from 'component/common/category-list';
 import type { Subscription } from 'redux/reducers/subscriptions';
 import Button from 'component/button';

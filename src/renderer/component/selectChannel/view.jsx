@@ -124,7 +124,7 @@ class ChannelSection extends React.PureComponent<Props, State> {
       onChannelChange(channelName);
     };
 
-    const failure = err => {
+    const failure = () => {
       this.setState({
         creatingChannel: false,
         createChannelError: __('Unable to create channel due to an internal error.'),

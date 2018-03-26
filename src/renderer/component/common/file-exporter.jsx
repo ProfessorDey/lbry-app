@@ -18,7 +18,6 @@ type Props = {
 };
 
 class FileExporter extends React.PureComponent<Props> {
-  handleButtonClick: () => void;
   static defaultProps = {
     filters: [],
   };
@@ -27,6 +26,8 @@ class FileExporter extends React.PureComponent<Props> {
     super();
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
+  
+  handleButtonClick: () => void;
 
   handleFileCreation(filename: string, data: any) {
     const { onFileCreated } = this.props;

@@ -3,7 +3,6 @@ import * as React from 'react';
 import { buildURI } from 'lbryURI';
 import { FormField } from 'component/common/form';
 import FileCard from 'component/fileCard';
-import BusyIndicator from 'component/common/busy-indicator';
 
 type FileInfo = {
   name: string,
@@ -106,12 +105,6 @@ class FileList extends React.PureComponent<Props, State> {
     };
   }
 
-  handleSortChanged(event: SyntheticInputEvent<*>) {
-    this.setState({
-      sortBy: event.target.value,
-    });
-  }
-
   getChannelSignature = (fileInfo: FileInfo) => {
     if (fileInfo.pending) {
       return undefined;
@@ -123,6 +116,12 @@ class FileList extends React.PureComponent<Props, State> {
     return fileInfo.channel_claim_id;
   };
 
+  handleSortChanged(event: SyntheticInputEvent<*>) {
+    this.setState({
+      sortBy: event.target.value,
+    });
+  }
+
   render() {
     const { fileInfos, hideFilter } = this.props;
     const { sortBy } = this.state;
@@ -131,10 +130,8 @@ class FileList extends React.PureComponent<Props, State> {
     this.sortFunctions[sortBy](fileInfos).forEach(fileInfo => {
       const {
         channel_name: channelName,
-        claim_name,
         claim_name: claimName,
         claim_id: claimId,
-        outpoint
       } = fileInfo;
       const uriParams = {};
 
@@ -153,7 +150,8 @@ class FileList extends React.PureComponent<Props, State> {
         <FileCard
           key={claimName}
           uri={uri}
-          showPrice={false} />
+          showPrice={false}
+        />
       );
     });
 

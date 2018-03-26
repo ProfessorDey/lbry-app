@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import CreditAmount from 'component/common/credit-amount';
 import Icon from 'component/common/icon';
 import RewardLink from 'component/rewardLink';
 import Button from 'component/button';
