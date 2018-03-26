@@ -47,7 +47,7 @@ export const doSearch = rawQuery => (dispatch, getState) => {
 
       data.forEach(result => {
         const uri = buildURI({
-          name: result.name,
+          claimName: result.name,
           claimId: result.claimId,
         });
         actions.push(doResolveUri(uri));
@@ -109,16 +109,16 @@ export const getSearchSuggestions = (value: string) => (dispatch, getState) => {
     }
 
     const uri = normalizeURI(uriQuery);
-    const { name, isChannel } = parseURI(uri);
+    const { claimName, isChannel } = parseURI(uri);
 
     suggestions.push(
       {
         value: uri,
-        shorthand: isChannel ? name.slice(1) : name,
+        shorthand: isChannel ? claimName.slice(1) : claimName,
         type: isChannel ? SEARCH_TYPES.CHANNEL : SEARCH_TYPES.FILE,
       },
       {
-        value: name,
+        value: claimName,
         type: SEARCH_TYPES.SEARCH,
       }
     );

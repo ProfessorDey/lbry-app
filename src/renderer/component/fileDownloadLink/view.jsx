@@ -92,7 +92,7 @@ class FileDownloadLink extends React.PureComponent {
         <Button
           className="btn--file-actions"
           description={__('Open')}
-          icon={icons.DOWNLOAD}
+          icon={icons.OPEN}
           onClick={() => openFile()}
         />
       );

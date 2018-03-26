@@ -129,8 +129,8 @@ export const selectSearchDownloadUris = query =>
 
     let downloadResultsFromQuery = [];
     fileInfos.forEach(fileInfo => {
-      const { channel_name, name, metadata } = fileInfo;
-      const { stream: { metadata: { author, description, title } } } = metadata;
+      const { channel_name, claim_name, metadata } = fileInfo;
+      const { author, description, title } = metadata;
 
       if (channel_name) {
         const channelName = channel_name.toLowerCase();
@@ -141,7 +141,7 @@ export const selectSearchDownloadUris = query =>
         }
       }
 
-      const nameParts = name.toLowerCase().split('-');
+      const nameParts = claim_name.toLowerCase().split('-');
       if (arrayContainsQueryPart(nameParts)) {
         downloadResultsFromQuery.push(fileInfo);
         return;
@@ -172,18 +172,24 @@ export const selectSearchDownloadUris = query =>
 
     return downloadResultsFromQuery.length
       ? downloadResultsFromQuery.map(fileInfo => {
-          const { channel_name: channelName, claim_id: claimId, name, value, metadata } = fileInfo;
+          const {
+            channel_name: channelName,
+            claim_id: claimId,
+            claim_name: claimName,
+            value,
+            metadata
+          } = fileInfo;
           const uriParams = {};
-
+          
           if (channelName) {
             uriParams.channelName = channelName;
-            uriParams.contentName = name;
+            uriParams.contentName = claimName;
             uriParams.claimId = value
               ? value.publisherSignature.certificateId
               : metadata.publisherSignature.certificateId;
           } else {
             uriParams.claimId = claimId;
-            uriParams.name = name;
+            uriParams.claimName = claimName;
           }
 
           const uri = buildURI(uriParams);

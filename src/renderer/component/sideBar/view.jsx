@@ -63,7 +63,7 @@ const SideBar = (props: Props) => {
           {navLinks.primary.map(({ label, path, active, icon }) => (
             <li
               key={path}
-              className={classnames('nav__link nav__link--primary', {
+              className={classnames('nav__link', {
                 'nav__link--active': active,
               })}
             >
@@ -96,7 +96,7 @@ const SideBar = (props: Props) => {
                       {subLinks.map(({ label: subLabel, path: subPath, active: subLinkActive }) => (
                         <li
                           key={subPath}
-                          className={classnames('nav__link--sub', {
+                          className={classnames('nav__link nav__link--sub', {
                             'nav__link--active': subLinkActive,
                           })}
                         >

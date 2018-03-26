@@ -148,6 +148,14 @@ p {
     'nav header'
     'nav content';
   background-color: var(--color-bg);
+
+  @media only screen and (min-width: $medium-breakpoint) {
+    grid-template-columns: var(--side-nav-width-m) auto;
+  }
+
+  @media only screen and (min-width: $large-breakpoint) {
+    grid-template-columns: var(--side-nav-width-l) auto;
+  }
 }
 
 /*
@@ -156,11 +164,10 @@ p {
 .content {
   grid-area: content;
   overflow: auto;
-  padding-top: $spacing-width;
 }
 
 .main {
-  padding: 0 $spacing-width $spacing-width;
+  padding: $spacing-width 0;
   margin: auto;
 }
 
@@ -226,8 +233,7 @@ p {
   padding: 5px;
   border-radius: 5px;
   font-family: 'metropolis-bold';
-  font-size: 10px;
-  line-height: 20px;
+  font-size: 8px;
 }
 
 .credit-amount--large {
