@@ -47,10 +47,11 @@ $large-breakpoint: 1760px;
   --color-bg: #fafafa;
   --color-bg-alt: var(--color-grey-light);
   --color-placeholder: #ececec;
+  --color-search-placeholder: var(--color-placeholder);
   --color-nav-bg: var(--color-grey-light);
 
   /* Shadows */
-  --box-shadow-layer: 0 4px 9px -2px var(--color-grey);
+  --box-shadow-layer: 0 2px 18px -4px var(--color-grey);
   --box-shadow-button: 0 10px 20px rgba(0, 0, 0, 0.1);
   --box-shadow-wunderbar: 0px 10px 20px rgba(0, 0, 0, 0.03);
 
@@ -116,6 +117,7 @@ $large-breakpoint: 1760px;
   --search-bg-color: #fff;
   --search-active-color: var(--header-active-color);
   --search-active-shadow: 0 6px 9px -2px var(--color-grey--dark);
+  --search-item-active-color: var(--color-black);
   --search-modal-input-height: 70px;
 
   /* Table */
@@ -124,6 +126,7 @@ $large-breakpoint: 1760px;
   --table-item-odd: #f4f4f4;
 
   /* Card */
+  --card-bg: var(--color-white);
   --card-radius: 2px;
   --card-margin: $spacing-vertical * 2/3;
   --card-wallet-color: var(--text-color-inverse);

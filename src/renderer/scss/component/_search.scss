@@ -78,7 +78,7 @@
 }
 
 .wunderbar__active-suggestion {
-  color: var(--text-color-inverse);
+  color: var(--search-item-active-color);
   background-color: var(--color-secondary);
 }
 
@@ -102,5 +102,8 @@
 
   .search-result__column {
     flex: 0 0 270px;
+    .card__media {
+      background-color: var(--color-search-placeholder);
+    }
   }
 }

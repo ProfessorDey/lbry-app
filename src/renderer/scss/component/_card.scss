@@ -13,6 +13,7 @@
   background-color: var(--card-bg);
   padding: $spacing-vertical;
   margin-top: $spacing-vertical * 2/3;
+  box-shadow: var(--box-shadow-layer);
 }
 
 .card--small {
