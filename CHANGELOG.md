@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Fixed
    * Black screen on macOS after maximizing LBRY and then closing ([#1235](https://github.com/lbryio/lbry-app/pull/1235))
+   * Fix dark theme ([#1034](https://github.com/lbryio/lbry-app/issues/1034))
 
 
 
