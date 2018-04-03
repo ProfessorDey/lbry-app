@@ -69,7 +69,7 @@ ul {
 }
 
 input {
-  border-bottom: var(--input-border-size) dotted var(--input-border-color);
+  border-bottom: var(--input-border-size) solid var(--input-border-color);
   color: var(--input-color);
   line-height: 1;
   cursor: text;
@@ -92,10 +92,17 @@ input {
     background: var(--input-copyable-bg);
     color: var(--input-copyable-color);
     padding: 10px 16px;
-    border: 1px dashed var(--input-copyable-border);
+    border-bottom: 1px dashed var(--input-copyable-border);
   }
 
-  &:not(.input-copyable):not(.wunderbar__input):not(:placeholder-shown) {
+  &:not(.input-copyable):not(.wunderbar__input):not(:placeholder-shown):not(:disabled) {
+    &:hover {
+      border-color: var(--input-hover-border-color);
+    }
+    &:active,
+    &:focus {
+      border-color: var(--color-primary) !important;
+    }
     border-bottom: var(--input-border-size) solid var(--input-border-color);
   }
 

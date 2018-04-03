@@ -1,65 +1,129 @@
 :root {
-    /* Colors */
-    --color-primary:  #009688;
-    --color-canvas: #0f1517;
-    --color-bg: #1a2327;
-    --color-bg-alt: #314048;
-    --color-help: rgba(255,255,255, 0.5);
-    --color-error: #a94442;
-    --color-load-screen-text: #FFF;
-    --color-money: #1DE9B6;
-    --color-meta-light: #757575;
-    --color-dark-overlay: rgba(15, 21, 23, 0.85);
-    --color-download: rgba(255, 255, 255, 0.75);
+
+  /* Colors */
+  --color-divider: rgba(255, 255, 255, 0.15);
+  --color-primary:  #009688;
+  --color-canvas: #0f1517;
+  --color-dark-overlay: rgba(15, 21, 23, 0.85);
+  --color-help: rgba(255,255,255, 0.5);
+  --color-error: #a94442;
+  --color-download: rgba(255, 255, 255, 0.75);
+  --color-download-overlay: var(--color-black);
+  --color-bg: #0f1517;
+  --color-bg-alt: #314048;
+  --color-placeholder: #1a2327;
+  --color-nav-bg: #1a2327;
 
 
-    /* Text */
-    --text-color: #FFF;
-    --text-selection-bg: rgba(0,150,136, 0.95);
+  /* Shadows */
+  --box-shadow-layer: 0 4px 9px -2px var(--color-black);
+  --box-shadow-button: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --box-shadow-wunderbar: 0px 10px 20px rgba(0, 0, 0, 0.03);
 
-    /* Form */
-    --form-label-color: rgba(255, 255, 255, 0.70);
+  /* Text */
+  --text-color: #FFF;
+  --text-help-color: #eee;
+  --text-max-width: 660px;
+  --text-link-padding: 4px;
+  --text-selection-color: #fff;
+  --text-color-inverse: var(--color-black);
 
-    /* Input */
-    --input-bg: transparent;
-    --input-border-color: rgba(255,255,255, 0.70);
-    --input-hover-border-color: rgba(255, 255, 255, 1);
+   /* Form */
+   --form-label-color: #FFF;
 
-    /* input:placeholder */
-    --input-placeholder-color: rgba(255,255,255, 0.5);
+  /* Input */
+  --input-bg: transparent;
+  --input-label-color: var(--color-grey-dark);
+  --input-color: var(--text-color);
+  --input-border-size: 1px;
+  --input-border-color: rgba(255,255,255, 0.5);
+  --input-hover-border-color: rgba(255, 255, 255, 1);
+  --input-copyable-bg: transparent;
+  --input-copyable-color: var(--color-grey-dark);
+  --input-copyable-border: var(--color-divider);
 
-    /* input:disabled */
-    --input-disabled-color: rgba(255, 255, 255, 0.50);
-    --input-disabled-border-color: rgba(255, 255, 255, 0.70);
+  /* input:disabled */
+  --input-disabled-border-color: rgba(255, 255, 255, 0.42);
+  --input-disabled-color: rgba(255, 255, 255, 0.54);
 
-    /* Search */
-    --search-bg: rgba(0,0,0, 0.45);
-    --search-color: #757575;
-    --search-active-bg: rgba(0,0,0, 0.75);
-    --search-border: 1px solid rgba(0,0,0, 0.25);
+  /* input:placeholder */
+  --input-placeholder-color: rgba(0, 0, 0, 0.42);
+  --input-placeholder-opacity: 1;
 
-    /* Tab */
-    --tab-color: rgba(255,255,255, 0.5) ;
-    --tab-active-color: rgba(255,255,255, 0.75);
+  /* Select */
+  --select-bg: var(--color-bg-alt);
+  --select-color: var(--text-color);
+  --select-height: 30px;
 
-    /* Header */
-    --header-color: #CCC;
-    --header-active-color: #FFF;
-    --header-button-hover-bg: var(--color-bg-alt);
+  /* Button */
+  --btn-bg-primary: var(--color-primary);
+  --btn-color-primary: var(--color-white);
+  --btn-bg-primary-hover: var(--color-primary-light);
+  --btn-bg-alt: var(--color-bg-alt);
+  --btn-color-alt: var(--text-color);
+  --btn-color-inverse: var(--color-primary);
+  --btn-external-color: var(--color-light-blue);
+  --btn-bg-secondary: var(--color-teal);
+  --btn-bg-danger: var(--color-red);
+  --btn-radius: 20px;
+  --btn-height: 36px;
 
-    /* Table */
-    --table-border: 0;
-    --table-item-even: var(--color-bg-alt);
-    --table-item-odd: transparent;
+  /* Header */
+  --header-bg: var(--color-white);
+  --header-color: var(--color-text);
+  --header-active-color: rgba(0, 0, 0, 0.85);
+  --header-button-bg: transparent;
+  --header-button-hover-bg: rgba(100, 100, 100, 0.15);
 
-    /* Modal */
-    --modal-overlay-bg: var(--color-dark-overlay);
-    --modal-border: 1px solid rgba(0, 0, 0, 0.25);
+  /* Header */
+  --header-color: #CCC;
+  --header-active-color: var(--color-white);
+  --header-button-hover-bg: var(--color-bg-alt);
 
-    /* Scrollbar */
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.20);
-    --scrollbar-thumb-hover-bg: rgba(255, 255, 255, 0.35);
 
-    /* Divider */
-    --divider: 1px solid rgba(255, 225, 225, 0.12);
+  /* Header -> search */
+  --search-color: var(--color-white);
+  --search-bg-color: var(--color-bg-alt);
+  --search-active-color: var(--color-grey);
+  --search-active-shadow: 0 6px 9px -2px var(--color-grey--dark);
+  --search-modal-input-height: 70px;
+
+  /* Table */
+  --table-border: 1px dashed var(--color-bg-alt);
+  --table-item-odd:  var(--color-bg-alt);
+  --table-item-even: transparent;
+
+  /* Card */
+  --card-bg: #1a2327;
+  --card-radius: 3px;
+  --card-wallet-color: var(--text-color-inverse);
+  --success-msg-color: var(--color-green);
+  --success-msg-border: var(--color-green-blue);
+  --success-msg-bg: var(--color-bg);
+
+  /* File Tile Card */
+  --file-tile--media-size: 60px;
+
+  /* Modal */
+  --modal-width: 440px;
+  --modal-bg: var(--color-bg);
+  --modal-overlay-bg: var(--color-dark-overlay);
+  --modal-border: 1px solid rgba(0, 0, 0, 0.25);
+
+  /* Tooltip */
+  --tooltip-width: 300px;
+  --tooltip-bg: var(--color-bg);
+  --tooltip-color: var(--text-color);
+
+  /* Scrollbar */
+  --scrollbar-radius: 10px;
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.20);
+  --scrollbar-thumb-hover-bg: rgba(255, 255, 255, 0.35);
+  --scrollbar-thumb-active-bg: var(--color-primary);
+  --scrollbar-track-bg: transparent;
+
+
+   /* Animation :) */
+  --animation-duration: 0.3s;
+  --animation-style: cubic-bezier(0.55, 0, 0.1, 1);
 }

@@ -7,7 +7,7 @@
     width: 24px;
     margin: 36px 0;
     // width: 40px;
-    border: solid 1px var(--color-grey);
+    border: solid 1px var(--color-divider);
     margin: $spacing-vertical $spacing-vertical * 2/3;
   }
 }
@@ -48,7 +48,7 @@
   }
 
   .btn:hover {
-    color: var(--color-black);
+    color: var(--text-color);
   }
 }
 
@@ -70,7 +70,7 @@
 }
 
 .nav__link--active {
-  color: var(--color-black);
+  color: var(--text-color);
 }
 
 .nav__sub-links {
