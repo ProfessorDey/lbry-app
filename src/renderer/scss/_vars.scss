@@ -48,7 +48,6 @@ $large-breakpoint: 1760px;
   --color-bg-alt: var(--color-grey-light);
   --color-placeholder: #ececec;
   --color-search-placeholder: var(--color-placeholder);
-  --color-nav-bg: var(--color-grey-light);
 
   /* Shadows */
   --box-shadow-layer: 0 2px 18px -4px var(--color-grey);
@@ -71,7 +70,7 @@ $large-breakpoint: 1760px;
   --input-color: var(--text-color);
   --input-border-size: 1px;
   --input-border-color: var(--color-grey-dark);
-  --input-copyable-bg: var(--color-grey-light);
+  --input-copyable-bg: transparent;
   --input-copyable-color: var(--color-grey-dark);
   --input-copyable-border: var(--color-grey);
 
@@ -83,7 +82,7 @@ $large-breakpoint: 1760px;
   --input-hover-border-color: rgba(0, 0, 0, 0.87);
 
   /* input:placeholder */
-  --input-placeholder-color: rgba(0, 0, 0, 0.42);
+  --input-placeholder-color: var(--color-help);
   --input-placeholder-opacity: 1;
 
   /* Select */
@@ -115,10 +114,15 @@ $large-breakpoint: 1760px;
   /* Header -> search */
   --search-color: #666;
   --search-bg-color: #fff;
+  --search-active-bg-color: var(--color-grey-light);
   --search-active-color: var(--header-active-color);
   --search-active-shadow: 0 6px 9px -2px var(--color-grey--dark);
   --search-item-active-color: var(--color-black);
   --search-modal-input-height: 70px;
+
+  /* Nav */
+  --nav-color: #bbb;
+  --nav-bg-color: var(--color-grey-light);
 
   /* Table */
   --table-border: 1px solid #e2e2e2;
@@ -127,6 +131,7 @@ $large-breakpoint: 1760px;
 
   /* Card */
   --card-bg: var(--color-white);
+  --card-text-color: var(--color-grey-dark);
   --card-radius: 2px;
   --card-margin: $spacing-vertical * 2/3;
   --card-wallet-color: var(--text-color-inverse);
@@ -140,7 +145,7 @@ $large-breakpoint: 1760px;
   /* Modal */
   --modal-width: 440px;
   --modal-bg: var(--color-bg);
-  --modal-overlay-bg: rgba(#f5f5f5, 0.75); // --color-canvas: #F5F5F5
+  --modal-overlay-bg: var(--nav-bg-color);
   --modal-border: 1px solid rgb(204, 204, 204);
 
   // /* Tooltip */

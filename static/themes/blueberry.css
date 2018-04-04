@@ -1,56 +1,52 @@
 :root {
 
   /* Colors */
-  --color-divider: rgba(255, 255, 255, 0.15);
+  --color-primary: #8165B0;
+  --color-primary-light: #B498E3;
+  --color-divider: #53637C;;
   --color-canvas: #0f1517;
-  --color-dark-overlay: rgba(15, 21, 23, 0.85);
-  --color-help: rgba(255,255,255, 0.45);
+  --color-dark-overlay: rgb(32,48,73, 0.75);
+  --color-help: #8696AF;
   --color-error: #a94442;
   --color-download: rgba(255, 255, 255, 0.75);
   --color-download-overlay: var(--color-black);
-  --color-bg: #0f1517;
-  --color-bg-alt: #314048;
-  --color-placeholder: #1a2327;
-  --color-search-placeholder: var(--color-bg-alt);
+  --color-bg: #203049;
+  --color-bg-alt: #13233C;
+  --color-placeholder: #13233C;
 
   /* Shadows */
   --box-shadow-layer: 0 2px 10px -4px rgba(0, 0, 0, 0.75);
-  --box-shadow-button: 0 2px 10px -4px rgba(0, 0, 0, 0.75);
-  --box-shadow-wunderbar: 0 2px 10px -4px rgba(0, 0, 0, 0.75);
 
   /* Text */
   --text-color: #FFF;
-  --text-help-color: #eee;
+  --text-help-color: #8696AF;
   --text-max-width: 660px;
   --text-link-padding: 4px;
+  --text-selection-color: #fff;
 
    /* Form */
    --form-label-color: #FFF;
 
   /* Input */
   --input-bg: transparent;
-  --input-label-color: var(--color-grey-dark);
+  --input-label-color: #8696AF;
   --input-color: var(--text-color);
   --input-border-size: 1px;
   --input-border-color: rgba(255,255,255, 0.5);
   --input-hover-border-color: rgba(255, 255, 255, 1);
   --input-copyable-bg: transparent;
-  --input-copyable-color: var(--color-grey-dark);
-  --input-copyable-border: var(--color-divider);
-
+  --input-copyable-color: #8696AF;
+  --input-copyable-border: #53637C;
+  
   /* input:disabled */
   --input-disabled-border-color: rgba(255, 255, 255, 0.42);
   --input-disabled-color: rgba(255, 255, 255, 0.54);
-  
-  /* Select */
-  --select-bg: var(--color-bg-alt);
-  --select-color: var(--text-color);
 
   /* Button */
   --btn-bg-primary: var(--color-primary);
   --btn-color-primary: var(--color-white);
   --btn-bg-primary-hover: var(--color-primary-light);
-  --btn-bg-alt: var(--color-bg-alt);
+  --btn-bg-alt: #13233C;
   --btn-color-alt: var(--text-color);
 
   /* Header */
@@ -65,17 +61,16 @@
   --header-active-color: var(--color-white);
   --header-button-hover-bg: var(--color-bg-alt);
 
-
   /* Header -> search */
   --search-color: var(--color-white);
-  --search-bg-color: var(--color-bg-alt);
-  --search-active-bg-color: rgba(0, 0, 0, 0.25);
+  --search-bg-color: rgb(58, 74, 99);
+  --search-active-bg-color: #13233C;
   --search-active-shadow: 0 6px 9px -2px var(--color-grey--dark);
   --search-modal-input-height: 70px;
 
   /* Nav */
-  --nav-color: var(--color-help);
-  --nav-bg-color: #1a2327;
+  --nav-color: #44548F;
+  --nav-bg-color: #0D102F;
 
   /* Table */
   --table-border: 1px solid var(--color-bg-alt);
@@ -83,16 +78,17 @@
   --table-item-even: transparent;
 
   /* Card */
-  --card-bg: #1a2327;
+  --card-bg: #13233C;
   --card-radius: 3px;
+  --card-text-color: var(--color-help);
   --card-wallet-color: var(--text-color-inverse);
-  --success-msg-color: var(--color-green);
-  --success-msg-border: var(--color-green-blue);
+  --success-msg-color: var(--color-primary-light);
+  --success-msg-border:var(--color-primary);
   --success-msg-bg: var(--color-bg);
 
   /* Modal */
-  --modal-bg: #1a2327;
-  --modal-overlay-bg: var(--color-dark-overlay);
+  --modal-bg: var(--card-bg);
+  --modal-overlay-bg:  rgb(32,48,73, 0.75);
   --modal-border: 1px solid rgba(0, 0, 0, 0.25);
 
   /* Scrollbar */
