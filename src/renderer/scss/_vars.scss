@@ -16,7 +16,7 @@ $large-breakpoint: 1760px;
   --video-aspect-ratio: 56.25%; // 9 x 16
   --snack-bar-width: 756px;
 
-  /* Colors */
+  /* Colors: Brand */
   --color-white: #fff;
   --color-black: #000;
   --color-grey: #d6d6d6;
@@ -34,28 +34,27 @@ $large-breakpoint: 1760px;
   --color-green: #399483;
   --color-green-light: #effbe4;
   --color-green-blue: #2ec1a8;
+
+  /* Colors */
   --color-divider: #e3e3e3;
-
-  --text-color: var(--color-black);
-  --text-color-inverse: var(--color-white);
-
-  --color-dark-overlay: rgba(32, 32, 32, 0.9);
   --color-help: rgba(0, 0, 0, 0.54);
   --color-error: #a94442;
   --color-download: var(--color-white);
   --color-download-overlay: var(--color-black);
   --color-bg: #fafafa;
   --color-bg-alt: var(--color-grey-light);
-  --color-placeholder: #ececec;
+  --color-placeholder: var(--color-grey);
   --color-search-placeholder: var(--color-placeholder);
 
   /* Shadows */
-  --box-shadow-layer: 0 2px 18px -4px var(--color-grey);
+  --box-shadow-layer: transparent; // 0 2px 4px rgba(0,0,0,0.25);
   --box-shadow-button: 0 10px 20px rgba(0, 0, 0, 0.1);
-  --box-shadow-wunderbar: 0px 10px 20px rgba(0, 0, 0, 0.03);
+  --box-shadow-wunderbar: 0 10px 20px rgba(0, 0, 0, 0.03);
 
   /* Text */
-  --text-help-color: #eee;
+  --text-color: var(--color-black);
+  --text-color-inverse: var(--color-white);
+  --text-help-color: var(--color-help);
   --text-max-width: 660px;
   --text-link-padding: 4px;
   --text-selection-bg: rgba(saturate(lighten(#155b4a, 20%), 20%), 1); // temp color
@@ -117,6 +116,7 @@ $large-breakpoint: 1760px;
   --search-active-bg-color: var(--color-grey-light);
   --search-active-color: var(--header-active-color);
   --search-active-shadow: 0 6px 9px -2px var(--color-grey--dark);
+  --search-item-border-color: transparent;
   --search-item-active-color: var(--color-black);
   --search-modal-input-height: 70px;
 
@@ -125,9 +125,9 @@ $large-breakpoint: 1760px;
   --nav-bg-color: var(--color-grey-light);
 
   /* Table */
-  --table-border: 1px solid #e2e2e2;
-  --table-item-even: white;
-  --table-item-odd: #f4f4f4;
+  --table-border: 1px solid var(--color-grey-light);
+  --table-item-odd: var(--color-grey-light);
+  --table-item-even: transparent;
 
   /* Card */
   --card-bg: var(--color-white);
@@ -145,8 +145,10 @@ $large-breakpoint: 1760px;
   /* Modal */
   --modal-width: 440px;
   --modal-bg: var(--color-bg);
-  --modal-overlay-bg: var(--nav-bg-color);
+  --modal-fullscreen-bg: var(--color-bg);
+  --modal-overlay-bg: rgba(246, 246, 246, 0.75);
   --modal-border: 1px solid rgb(204, 204, 204);
+  --modal-btn-bg-color: var(--btn-bg-alt);
 
   // /* Tooltip */
   --tooltip-width: 300px;

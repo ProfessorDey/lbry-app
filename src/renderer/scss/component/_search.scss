@@ -61,7 +61,7 @@
   font-family: 'metropolis-medium';
 
   &:not(:first-of-type) {
-    border-top: 1px solid var(--color-divider);
+    border-top: 1px solid var(--search-item-border-color);
   }
 }
 
@@ -91,7 +91,7 @@
   font-family: 'metropolis-bold';
   font-size: var(--search-modal-input-height);
   color: var(--search-color);
-  background: var(--modal-bg);
+  background: transparent;
   width: 100%;
 }
 

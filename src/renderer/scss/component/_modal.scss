@@ -18,11 +18,13 @@
 }
 
 .modal {
+  /* Set modal buttons background color */
+  --btn-bg-alt: var(--modal-btn-bg-color);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   border: var(--modal-border);
   background: var(--modal-bg);
   overflow: auto;
@@ -40,7 +42,7 @@
   right: 0;
   bottom: 0;
   padding: $spacing-vertical;
-  background: var(--modal-bg);
+  background: var(--modal-fullscreen-bg);
   overflow-y: scroll;
 
   .main {
@@ -54,7 +56,7 @@
 // Slide down isn't possible without doing a lot of re-work to the modal component
 .ReactModal__Overlay {
   .modal--fullscreen {
-    transition: height var(--animation-style) var(--animation-style);
+    transition: height var(--animation-duration) var(--animation-style);
     height: 0;
   }
 
